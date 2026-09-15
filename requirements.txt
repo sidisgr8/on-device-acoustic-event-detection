@@ -1,0 +1,11 @@
+torch
+torchvision
+numpy
+pandas
+scikit-learn
+librosa
+soundfile
+joblib
+matplotlib
+pyyaml
+pytest
