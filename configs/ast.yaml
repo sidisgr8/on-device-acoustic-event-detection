@@ -1,0 +1,22 @@
+# Model 3: AST fine-tuned from the AudioSet checkpoint, 400-frame input (docs/DECISIONS.md D-08).
+# Spec section 4.4: AdamW lr 5e-5 cosine, batch 16, 5 epochs per fold, SpecAugment as in section 3.
+# Fold order 1,5,9,2,3,4,6,7,8,10 is set in the queue, not here (D-07).
+protocol_version: 2
+experiment: ast
+model: {name: ast, pretrained: true, pos_crop: center}
+data:
+  input: ast                # cached Kaldi fbank, checkpoint normalisation constants
+  cache: data/cache
+train:
+  lr: 5.0e-5
+  weight_decay: 0.01
+  batch_size: 16
+  max_epochs: 5
+  warmup_epochs: 0
+  early_stopping: false     # always run the 5 epochs, keep the best-val epoch
+  label_smoothing: 0.1
+  amp: auto                 # resolved by the amp_probe stage of the queue (D-11, D-27); never hand-set
+  seed: 42
+# Same augmentation in SECONDS as the CNN family: 20 frames x 20 ms hop = 400 ms there, so AST (10 ms shift) needs
+# 40 frames (D-36). Frequency masks are identical (2 x up to 16 of 128 bins). Decided before any AST result existed.
+specaugment: {freq_masks: 2, freq_width: 16, time_masks: 2, time_width: 40}

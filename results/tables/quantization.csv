@@ -1,0 +1,21 @@
+Model,Variant,Folds,Accuracy (%),Macro-F1,Δ acc vs fp32 (pts),Size (MB),Size vs fp32,Note
+CNN baseline,fp32_torch,10/10,75.22 ± 4.93,0.767 ± 0.041,0.00 ± 0.00,1.58,1.00×,
+CNN baseline,torch_static_int8_fx,10/10,75.22 ± 5.17,0.768 ± 0.044,-0.00 ± 0.80,0.40,0.25×,
+CNN baseline,onnx_fp32,10/10,75.22 ± 4.93,0.767 ± 0.041,0.00 ± 0.00,1.56,0.99×,
+CNN baseline,onnx_int8,10/10,75.18 ± 5.21,0.767 ± 0.044,-0.04 ± 0.95,0.41,0.26×,"ORT static QDQ int8 (activations uint8, weights int8), 100 calibration clips"
+MobileNetV3-S (scratch),fp32_torch,10/10,63.77 ± 4.81,0.652 ± 0.044,0.00 ± 0.00,6.24,1.00×,
+MobileNetV3-S (scratch),torch_static_int8_fx,10/10,62.20 ± 4.68,0.635 ± 0.044,-1.57 ± 1.03,1.80,0.29×,
+MobileNetV3-S (scratch),onnx_fp32,10/10,63.77 ± 4.81,0.652 ± 0.044,0.00 ± 0.00,6.12,0.98×,
+MobileNetV3-S (scratch),onnx_int8,10/10,63.00 ± 4.84,0.644 ± 0.045,-0.77 ± 0.85,1.74,0.28×,"ORT static QDQ int8 (activations uint8, weights int8), 100 calibration clips"
+MobileNetV3-S (ImageNet),fp32_torch,10/10,78.89 ± 4.86,0.802 ± 0.041,0.00 ± 0.00,6.24,1.00×,
+MobileNetV3-S (ImageNet),torch_static_int8_fx,10/10,12.76 ± 5.06,0.075 ± 0.038,-66.13 ± 5.38,1.80,0.29×,
+MobileNetV3-S (ImageNet),onnx_fp32,10/10,78.89 ± 4.86,0.802 ± 0.041,0.00 ± 0.00,6.12,0.98×,
+MobileNetV3-S (ImageNet),onnx_int8,10/10,8.96 ± 4.34,0.040 ± 0.022,-69.93 ± 7.18,1.74,0.28×,"ORT static QDQ int8 (activations uint8, weights int8), 100 calibration clips"
+CRNN (CNN+BiGRU),fp32_torch,10/10,77.15 ± 5.66,0.789 ± 0.049,0.00 ± 0.00,2.25,1.00×,
+CRNN (CNN+BiGRU),torch_dynamic_int8,10/10,77.19 ± 5.63,0.789 ± 0.049,0.04 ± 0.17,0.86,0.38×,
+CRNN (CNN+BiGRU),onnx_fp32,10/10,77.15 ± 5.66,0.789 ± 0.049,0.00 ± 0.00,2.24,1.00×,
+CRNN (CNN+BiGRU),onnx_int8,10/10,77.31 ± 5.83,0.790 ± 0.050,0.17 ± 0.49,1.17,0.52×,"ORT dynamic int8 (weights int8, MatMul/Gemm); ORT has no dynamic int8 for GRU, so the GRU "
+AST,fp32_torch,10/10,85.92 ± 5.25,0.870 ± 0.047,0.00 ± 0.00,342.58,1.00×,
+AST,torch_dynamic_int8,10/10,85.90 ± 5.45,0.870 ± 0.049,-0.03 ± 0.39,87.82,0.26×,
+AST,onnx_fp32,10/10,85.92 ± 5.25,0.870 ± 0.047,0.00 ± 0.00,342.74,1.00×,
+AST,onnx_int8,10/10,85.99 ± 5.39,0.870 ± 0.049,0.07 ± 0.26,87.53,0.26×,"ORT dynamic int8 (weights int8, MatMul/Gemm)"

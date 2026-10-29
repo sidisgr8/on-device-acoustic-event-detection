@@ -1,0 +1,26 @@
+Model,Folds,Rank,True class,Predicted as,Clips,Share of true class (%)
+CNN baseline,10/10,1,jackhammer,air_conditioner,166,16.6
+CNN baseline,10/10,2,engine_idling,air_conditioner,151,15.1
+CNN baseline,10/10,3,air_conditioner,engine_idling,137,13.7
+CNN baseline,10/10,4,jackhammer,drilling,121,12.1
+CNN baseline,10/10,5,air_conditioner,street_music,111,11.1
+MobileNetV3-S (scratch),10/10,1,jackhammer,drilling,206,20.6
+MobileNetV3-S (scratch),10/10,2,air_conditioner,engine_idling,200,20.0
+MobileNetV3-S (scratch),10/10,3,engine_idling,jackhammer,159,15.9
+MobileNetV3-S (scratch),10/10,4,jackhammer,engine_idling,152,15.2
+MobileNetV3-S (scratch),10/10,5,drilling,jackhammer,139,13.9
+MobileNetV3-S (ImageNet),10/10,1,jackhammer,drilling,146,14.6
+MobileNetV3-S (ImageNet),10/10,2,air_conditioner,engine_idling,130,13.0
+MobileNetV3-S (ImageNet),10/10,3,jackhammer,air_conditioner,125,12.5
+MobileNetV3-S (ImageNet),10/10,4,engine_idling,jackhammer,119,11.9
+MobileNetV3-S (ImageNet),10/10,5,air_conditioner,street_music,83,8.3
+CRNN (CNN+BiGRU),10/10,1,engine_idling,air_conditioner,138,13.8
+CRNN (CNN+BiGRU),10/10,2,jackhammer,drilling,132,13.2
+CRNN (CNN+BiGRU),10/10,3,jackhammer,engine_idling,123,12.3
+CRNN (CNN+BiGRU),10/10,4,air_conditioner,street_music,110,11.0
+CRNN (CNN+BiGRU),10/10,5,air_conditioner,drilling,96,9.6
+AST,10/10,1,jackhammer,drilling,163,16.3
+AST,10/10,2,air_conditioner,engine_idling,157,15.7
+AST,10/10,3,engine_idling,air_conditioner,73,7.3
+AST,10/10,4,jackhammer,engine_idling,62,6.2
+AST,10/10,5,drilling,jackhammer,55,5.5

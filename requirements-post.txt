@@ -1,0 +1,11 @@
+# Extra packages for post-training tooling (quantization, ONNX, latency). Installed into a SEPARATE
+# venv (.venv-post) so the training venv is never modified while a queue is running.
+-r requirements.txt
+onnx
+onnxruntime
+onnxscript
+# ml_dtypes==0.6.0
+# onnx==1.23.2
+# onnxruntime==1.31.0
+# onnxscript==0.7.2
+# protobuf==7.36.2

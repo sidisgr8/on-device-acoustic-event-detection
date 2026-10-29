@@ -1,0 +1,7 @@
+Model,Pretrained,Folds,Accuracy (%),Macro-F1,Params (M),fp32 size (MB),MACs (M),CPU latency 1T median (ms),CPU latency 4T median (ms)
+CNN baseline,no,10/10,75.22 ± 4.93,0.767 ± 0.041,0.391,1.58,361.3,3.62,1.61
+MobileNetV3-S (scratch),no,10/10,63.77 ± 4.81,0.652 ± 0.044,1.528,6.24,28.6,4.87,26.85
+MobileNetV3-S (ImageNet),ImageNet,10/10,78.89 ± 4.86,0.802 ± 0.041,1.528,6.24,28.6,4.87,26.88
+CRNN (CNN+BiGRU),no,10/10,77.15 ± 5.66,0.789 ± 0.049,0.558,2.25,266.3,4.04,2.05
+AST,ImageNet+AudioSet,10/10,85.88 ± 5.23,0.870 ± 0.047,85.625,342.58,"44,082.9",97.06,69.51
+"[Ablation A-1] MobileNetV3-S (scratch, lr 3e-4)",no,10/10,59.11 ± 4.91,0.609 ± 0.045,1.528,6.24,28.6,-,-

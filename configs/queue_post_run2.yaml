@@ -1,0 +1,11 @@
+# Post-training run 2 (D-43): 0 %-sparsity fine-tuning CONTROL for the pruning comparison (GPU).
+# Same 3-epoch fine-tune procedure, lr rule (0.1 x original, D-31), folds 1/5/9 as the pruned runs, sparsity 0, all five models
+# (AST last). Results: results/prune/<exp>/s0/fold<k>.json, shown as a labelled control row.
+python: .venv-post/bin/python
+stages:
+  - name: prune_control
+    resource: gpu
+    cmd: [scripts/prune.py, --sparsities, "0.0"]
+  - name: tables
+    resource: cpu
+    cmd: [scripts/make_tables.py]

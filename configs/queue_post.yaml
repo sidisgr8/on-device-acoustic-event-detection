@@ -1,0 +1,18 @@
+# Post-training stages, run AFTER the training queue has finished (docs/RUNBOOK.md).
+# All stages use the post-training venv (.venv-post): same pinned torch as training, plus onnx/onnxruntime.
+# `manual: true` stages run only when asked for by name (python scripts/run_post.py --stage latency).
+python: .venv-post/bin/python
+stages:
+  - name: quant_eval          # CPU. Post-training int8 (PyTorch + ONNX Runtime), every finished fold, TEST split, no retraining
+    resource: cpu
+    cmd: [scripts/quant_eval.py, --split, test]
+  - name: prune               # GPU (MPS). Global magnitude pruning + 3-epoch masked fine-tune, folds 1/5/9, test split
+    resource: gpu
+    cmd: [scripts/prune.py]
+  - name: tables              # cheap. Tables (CSV+Markdown) and figures from result files
+    resource: cpu
+    cmd: [scripts/make_tables.py]
+  - name: latency             # MANUAL. Needs an otherwise idle machine; refuses to run otherwise
+    resource: idle_machine
+    manual: true
+    cmd: [scripts/benchmark_latency.py]

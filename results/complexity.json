@@ -1,0 +1,75 @@
+{
+  "note": "MACs per 4 s clip (batch 1), counted by forward hooks on Conv2d, Linear and GRU layers; BatchNorm, activations, pooling and softmax are not counted; AST attention score/value matmuls are added analytically (2 x layers x tokens^2 x hidden). Architecture only, pretrained weights do not change it (the two MobileNetV3 runs are identical).",
+  "torch": "2.14.1",
+  "models": {
+    "cnn_baseline": {
+      "experiment": "cnn_baseline",
+      "params": 390890,
+      "macs_conv": 361304064,
+      "macs_linear": 2560,
+      "macs_gru": 0,
+      "macs_attention": 0,
+      "macs_total": 361306624,
+      "input_shape": [
+        1,
+        128,
+        201
+      ]
+    },
+    "mobilenetv3_small_scratch": {
+      "experiment": "mobilenetv3_small_scratch",
+      "params": 1527818,
+      "macs_conv": 28619968,
+      "macs_linear": 10240,
+      "macs_gru": 0,
+      "macs_attention": 0,
+      "macs_total": 28630208,
+      "input_shape": [
+        1,
+        128,
+        201
+      ]
+    },
+    "mobilenetv3_small_imagenet": {
+      "experiment": "mobilenetv3_small_imagenet",
+      "params": 1527818,
+      "macs_conv": 28619968,
+      "macs_linear": 10240,
+      "macs_gru": 0,
+      "macs_attention": 0,
+      "macs_total": 28630208,
+      "input_shape": [
+        1,
+        128,
+        201
+      ]
+    },
+    "crnn": {
+      "experiment": "crnn",
+      "params": 558442,
+      "macs_conv": 243339264,
+      "macs_linear": 13112320,
+      "macs_gru": 9830400,
+      "macs_attention": 0,
+      "macs_total": 266281984,
+      "input_shape": [
+        1,
+        128,
+        201
+      ]
+    },
+    "ast": {
+      "experiment": "ast",
+      "params": 85625098,
+      "macs_conv": 92012544,
+      "macs_linear": 39919296000,
+      "macs_gru": 0,
+      "macs_attention": 4071628800,
+      "macs_total": 44082937344,
+      "input_shape": [
+        400,
+        128
+      ]
+    }
+  }
+}

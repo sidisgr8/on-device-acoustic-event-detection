@@ -1,0 +1,12 @@
+# Post-training run 3 (D-47): EXTENDED fine-tune recipe (lr 3e-4, 10 epochs) for the pruned CNN-family models at 50 / 70 % (GPU).
+# One configuration only, chosen on validation data of the ImageNet MobileNetV3-S (D-45); no further tuning whatever the test results are.
+# Not for AST. Results (create-only): results/prune/<exp>/s50_ext, s70_ext; main-run rows are never replaced.
+python: .venv-post/bin/python
+stages:
+  - name: prune_extended
+    resource: gpu
+    cmd: [scripts/prune.py, --experiments, mobilenetv3_small_imagenet, cnn_baseline, mobilenetv3_small_scratch, crnn,
+          --sparsities, "0.5", "0.7", --ft-lr, "3e-4", --ft-epochs, "10", --dir-suffix, _ext]
+  - name: tables
+    resource: cpu
+    cmd: [scripts/make_tables.py]

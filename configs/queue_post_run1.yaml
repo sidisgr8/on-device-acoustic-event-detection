@@ -1,0 +1,17 @@
+# First post-training run (owner-approved order, sequential): A-1 ablation (GPU), pruning (GPU), quantization eval (CPU),
+# then tables. Latency is NOT here: it is manual and needs an idle machine (D-21).
+#   caffeinate -dimsu nohup .venv-post/bin/python scripts/run_post.py --queue configs/queue_post_run1.yaml ...
+python: .venv-post/bin/python
+stages:
+  - name: ablation_a1         # GPU (MPS). MobileNetV3-S from scratch, lr 3e-4, 10 folds (D-38); resumable, failed folds recorded and skipped
+    resource: gpu
+    cmd: [scripts/run_queue.py, --queue, configs/queue_ablation.yaml, --auto-commit]
+  - name: prune               # GPU (MPS). Global magnitude pruning + 3-epoch masked fine-tune, folds 1/5/9, test split once
+    resource: gpu
+    cmd: [scripts/prune.py]
+  - name: quant_eval          # CPU. Post-training int8 (PyTorch + ONNX Runtime), every finished fold, TEST split once
+    resource: cpu
+    cmd: [scripts/quant_eval.py, --split, test]
+  - name: tables              # cheap. Tables and figures from result files
+    resource: cpu
+    cmd: [scripts/make_tables.py]

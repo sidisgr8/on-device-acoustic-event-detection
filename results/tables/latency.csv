@@ -1,0 +1,61 @@
+Model,Variant,Threads,Median (ms),p95 (ms),Size (MB),Spread across repeats (%)
+CNN baseline,fp32_torch,1,3.62,3.70,1.58,3.5
+CNN baseline,fp32_torch,4,1.61,1.69,1.58,2.3
+CNN baseline,torch_static_int8_fx,1,6.35,6.38,0.43,5.7
+CNN baseline,torch_static_int8_fx,4,6.35,6.39,0.43,5.6
+CNN baseline,onnx_fp32,1,2.17,2.20,1.56,1.0
+CNN baseline,onnx_fp32,4,0.86,0.88,1.56,0.8
+CNN baseline,onnx_int8,1,2.06,2.09,0.41,3.8
+CNN baseline,onnx_int8,4,0.64,0.72,0.41,5.6
+CNN baseline,pruned_s70,1,3.61,3.70,1.58,2.9
+CNN baseline,pruned_s70,4,1.61,1.66,1.58,1.5
+MobileNetV3-S (scratch),fp32_torch,1,4.87,4.93,6.24,1.7
+MobileNetV3-S (scratch),fp32_torch,4,26.85,27.62,6.24,4.2
+MobileNetV3-S (scratch),torch_static_int8_fx,1,1.28,1.31,2.14,1.8
+MobileNetV3-S (scratch),torch_static_int8_fx,4,1.87,1.89,2.14,2.2
+MobileNetV3-S (scratch),onnx_fp32,1,1.93,1.97,6.12,1.2
+MobileNetV3-S (scratch),onnx_fp32,4,0.79,0.83,6.12,1.6
+MobileNetV3-S (scratch),onnx_int8,1,0.66,0.68,1.74,3.0
+MobileNetV3-S (scratch),onnx_int8,4,0.46,0.55,1.74,5.4
+MobileNetV3-S (scratch),pruned_s70,1,4.84,4.93,6.24,1.0
+MobileNetV3-S (scratch),pruned_s70,4,26.81,27.62,6.24,3.6
+MobileNetV3-S (ImageNet),fp32_torch,1,4.87,4.96,6.24,0.7
+MobileNetV3-S (ImageNet),fp32_torch,4,26.88,27.48,6.24,3.3
+MobileNetV3-S (ImageNet),torch_static_int8_fx,1,1.28,1.32,2.15,0.7
+MobileNetV3-S (ImageNet),torch_static_int8_fx,4,1.86,1.88,2.15,2.1
+MobileNetV3-S (ImageNet),onnx_fp32,1,1.90,1.95,6.12,1.3
+MobileNetV3-S (ImageNet),onnx_fp32,4,0.78,0.79,6.12,1.0
+MobileNetV3-S (ImageNet),onnx_int8,1,0.67,0.68,1.74,12.8 (noisy)
+MobileNetV3-S (ImageNet),onnx_int8,4,0.46,0.47,1.74,9.1
+MobileNetV3-S (ImageNet),pruned_s70,1,4.86,4.93,6.24,1.0
+MobileNetV3-S (ImageNet),pruned_s70,4,26.77,27.45,6.24,3.4
+CRNN (CNN+BiGRU),fp32_torch,1,4.04,4.09,2.25,0.6
+CRNN (CNN+BiGRU),fp32_torch,4,2.05,2.09,2.25,0.6
+CRNN (CNN+BiGRU),torch_dynamic_int8,1,4.90,4.96,0.86,0.4
+CRNN (CNN+BiGRU),torch_dynamic_int8,4,2.90,3.00,0.86,0.2
+CRNN (CNN+BiGRU),onnx_fp32,1,1.91,1.95,2.24,0.6
+CRNN (CNN+BiGRU),onnx_fp32,4,0.76,0.79,2.24,1.8
+CRNN (CNN+BiGRU),onnx_int8,1,2.18,2.20,1.17,0.1
+CRNN (CNN+BiGRU),onnx_int8,4,0.97,0.98,1.17,3.6
+CRNN (CNN+BiGRU),pruned_s70,1,4.04,4.09,2.25,0.6
+CRNN (CNN+BiGRU),pruned_s70,4,2.05,2.10,2.25,0.6
+AST,fp32_torch,1,97.06,98.10,342.58,0.2
+AST,fp32_torch,4,69.51,71.27,342.58,0.2
+AST,torch_dynamic_int8,1,720.95,722.54,87.82,0.0
+AST,torch_dynamic_int8,4,687.52,688.58,87.82,0.3
+AST,onnx_fp32,1,126.95,128.78,342.74,0.9
+AST,onnx_fp32,4,74.48,76.22,342.74,0.5
+AST,onnx_int8,1,140.46,141.57,87.53,0.4
+AST,onnx_int8,4,62.75,64.67,87.53,1.0
+AST,pruned_s70,1,97.38,98.14,342.58,0.3
+AST,pruned_s70,4,69.50,71.48,342.58,0.3
+CNN baseline,feature extraction,1,1.07,1.12,-,4.3
+CNN baseline,feature extraction,4,1.07,1.09,-,6.9
+MobileNetV3-S (scratch),feature extraction,1,1.07,1.12,-,10.8 (noisy)
+MobileNetV3-S (scratch),feature extraction,4,1.07,1.11,-,3.1
+MobileNetV3-S (ImageNet),feature extraction,1,1.07,1.08,-,2.3
+MobileNetV3-S (ImageNet),feature extraction,4,1.06,1.09,-,1.6
+CRNN (CNN+BiGRU),feature extraction,1,1.08,1.13,-,2.0
+CRNN (CNN+BiGRU),feature extraction,4,1.08,1.10,-,2.0
+AST,feature extraction,1,0.60,0.62,-,0.1
+AST,feature extraction,4,0.54,0.55,-,0.8

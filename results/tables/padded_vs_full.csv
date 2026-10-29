@@ -1,0 +1,6 @@
+Model,Folds,Padded clips (n),Padded acc (%),Full-length clips (n),Full acc (%),Full − padded (pts)
+CNN baseline,10/10,1399,88.99,7333,72.62,-16.38
+MobileNetV3-S (scratch),10/10,1399,78.27,7333,60.86,-17.41
+MobileNetV3-S (ImageNet),10/10,1399,90.21,7333,76.69,-13.51
+CRNN (CNN+BiGRU),10/10,1399,90.56,7333,74.55,-16.01
+AST,10/10,1399,95.35,7333,84.06,-11.30

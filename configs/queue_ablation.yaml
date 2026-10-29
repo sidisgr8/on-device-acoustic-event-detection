@@ -1,0 +1,5 @@
+# Ablation A-1 (D-38): MobileNetV3-Small from scratch at lr 3e-4, all 10 folds, seed 42.
+# Run by the post-training queue (configs/queue_post_run1.yaml), never by the main queue.
+folds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+jobs:
+  - {config: configs/ablation_a1.yaml, est_epoch_s: 9.9}

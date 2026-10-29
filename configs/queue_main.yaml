@@ -1,0 +1,13 @@
+# Main queue, protocol v2 (D-26): CNN family first (30 fixed epochs, no early stopping, all 10 folds,
+# seed 42), then the AST chain (D-27): precision probe, then AST folds in the fallback-first order.
+# est_epoch_s are seconds/epoch measured on this Mac (MPS) in short runs (AST: from a probe, not a run);
+# scripts/status.py uses them for the ETA until real folds have finished.
+folds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+jobs:
+  - {config: configs/cnn_baseline.yaml,               est_epoch_s: 14.3}
+  - {config: configs/mobilenetv3_small_scratch.yaml,  est_epoch_s: 9.6}
+  - {config: configs/mobilenetv3_small_imagenet.yaml, est_epoch_s: 9.6}
+  - {config: configs/crnn.yaml,                       est_epoch_s: 14.4}
+  - {stage: amp_probe, config: configs/ast.yaml}
+  - {config: configs/ast.yaml, est_epoch_s: 480, folds: [1, 5, 9, 2, 3, 4, 6, 7, 8, 10]}
+# NOT chained, by decision: quantization, pruning, latency benchmarks (need an idle machine and the owner's go-ahead).

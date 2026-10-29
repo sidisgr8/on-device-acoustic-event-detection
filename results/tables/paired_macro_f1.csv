@@ -1,0 +1,11 @@
+A,B,Folds,Mean diff A-B (F1),95% bootstrap CI,A ahead in,Wilcoxon p,Wilcoxon p (Holm),paired t p
+CNN baseline,MobileNetV3-S (scratch),10/10,+0.115,"[+0.101, +0.134]",10/10,0.002,0.020,<0.001
+CNN baseline,MobileNetV3-S (ImageNet),10/10,-0.035,"[-0.046, -0.025]",0/10,0.002,0.020,<0.001
+CNN baseline,CRNN (CNN+BiGRU),10/10,-0.022,"[-0.034, -0.010]",3/10,0.027,0.055,0.008
+CNN baseline,AST,10/10,-0.103,"[-0.117, -0.087]",0/10,0.002,0.020,<0.001
+MobileNetV3-S (scratch),MobileNetV3-S (ImageNet),10/10,-0.149,"[-0.170, -0.131]",0/10,0.002,0.020,<0.001
+MobileNetV3-S (scratch),CRNN (CNN+BiGRU),10/10,-0.136,"[-0.154, -0.118]",0/10,0.002,0.020,<0.001
+MobileNetV3-S (scratch),AST,10/10,-0.217,"[-0.238, -0.197]",0/10,0.002,0.020,<0.001
+MobileNetV3-S (ImageNet),CRNN (CNN+BiGRU),10/10,+0.013,"[+0.000, +0.024]",7/10,0.084,0.084,0.078
+MobileNetV3-S (ImageNet),AST,10/10,-0.068,"[-0.088, -0.051]",0/10,0.002,0.020,<0.001
+CRNN (CNN+BiGRU),AST,10/10,-0.081,"[-0.097, -0.067]",0/10,0.002,0.020,<0.001

@@ -1,0 +1,18 @@
+# Model 1b: MobileNetV3-Small from scratch, common protocol
+protocol_version: 2        # fixed epochs, no early stopping (docs/DECISIONS.md D-26)
+experiment: mobilenetv3_small_scratch
+model: {name: mobilenetv3_small, pretrained: false}
+data:
+  cache: data/cache
+  floor_db: -80.0          # docs/DECISIONS.md D-15
+train:
+  lr: 1.0e-3
+  weight_decay: 0.01
+  batch_size: 64
+  max_epochs: 30           # cosine decays over exactly these epochs
+  warmup_epochs: 2
+  early_stopping: false    # always run all epochs; best-val-accuracy checkpoint is evaluated on test once
+  label_smoothing: 0.1
+  amp: none                # none | fp16 | bf16 ; see docs/DECISIONS.md D-11
+  seed: 42
+specaugment: {freq_masks: 2, freq_width: 16, time_masks: 2, time_width: 20}

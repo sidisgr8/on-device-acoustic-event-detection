@@ -1,11 +1,20 @@
-torch
-torchvision
-numpy
-pandas
-scikit-learn
-librosa
-soundfile
-joblib
-matplotlib
-pyyaml
-pytest
+# Versions are those the project was developed and run with (Python 3.13, macOS arm64).
+torch==2.14.1
+torchaudio==2.11.0
+torchvision==0.29.1
+timm==1.0.30
+transformers==5.20.1
+librosa==1.0.0
+soundfile==0.14.0
+numpy==2.5.3
+scipy==1.18.1
+pandas==3.0.6
+scikit-learn==1.9.1
+matplotlib==3.11.2
+PyYAML==6.0.3
+tqdm==4.70.1
+certifi==2026.10.18
+pytest==9.1.1
+# Only needed to read the course PDFs/docx when preparing docs, not by the pipeline
+pypdf==6.21.1
+python-docx==1.2.0
