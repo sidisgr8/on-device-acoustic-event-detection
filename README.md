@@ -1,6 +1,6 @@
 # On-device acoustic event detection on UrbanSound8K: accuracy versus efficiency
 
-ICT 4442 Deep Learning mini project. Author: Rohan Sinha (single-author project, D-12).
+ICT 4442 Deep Learning mini project.
 
 Five models are compared on UrbanSound8K under one protocol (10-fold cross-validation with the dataset's
 predefined folds, one seed): a small CNN baseline, MobileNetV3-Small trained from scratch and from ImageNet
