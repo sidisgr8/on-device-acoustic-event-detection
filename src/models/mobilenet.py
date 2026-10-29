@@ -1,20 +1,37 @@
-"""Model 1b - MobileNetV3-Small, the 'efficient by design' variant (Rohan).
+"""Model 1b/1c: MobileNetV3-Small (timm `mobilenetv3_small_100`), 1-channel input, 10-way head."""
+import hashlib
+from pathlib import Path
 
-torchvision's MobileNetV3-Small with (a) a 1-channel input layer made by summing the
-RGB filters of the first conv, and (b) a new 10-way classifier head.
-pretrained=True starts from ImageNet weights (needs internet the first time).
-"""
-import torch.nn as nn
-from torchvision.models import MobileNet_V3_Small_Weights, mobilenet_v3_small
+import timm
+from torch import nn
+
+ARCH = "mobilenetv3_small_100"
 
 
-def build_mobilenet(n_classes=10, pretrained=False):
-    weights = MobileNet_V3_Small_Weights.IMAGENET1K_V1 if pretrained else None
-    net = mobilenet_v3_small(weights=weights)
-    old = net.features[0][0]                                   # Conv2d(3, 16, 3, stride 2)
-    new = nn.Conv2d(1, old.out_channels, kernel_size=old.kernel_size, stride=old.stride,
-                    padding=old.padding, bias=False)
-    new.weight.data = old.weight.data.sum(dim=1, keepdim=True)  # RGB filters -> 1 channel
-    net.features[0][0] = new
-    net.classifier[-1] = nn.Linear(net.classifier[-1].in_features, n_classes)
-    return net
+def weights_provenance(model) -> dict:
+    """Which pretrained weights were loaded and where they came from (for the results JSON)."""
+    cfg = model.pretrained_cfg
+    info = {"timm_version": timm.__version__, "arch": ARCH, "pretrained_tag": cfg.get("tag"),
+            "hf_hub_id": cfg.get("hf_hub_id"), "source_url": cfg.get("url") or cfg.get("hf_hub_id")}
+    try:
+        from huggingface_hub import hf_hub_download
+        f = Path(hf_hub_download(cfg["hf_hub_id"], "model.safetensors"))
+        info["file"] = f.name
+        info["sha256"] = hashlib.sha256(f.read_bytes()).hexdigest()
+        info["hf_snapshot"] = f.parent.name  # commit hash of the HF repo revision (snapshots/<hash>/)
+    except Exception as e:  # provenance is best-effort, never blocks training
+        info["sha256_error"] = repr(e)
+    return info
+
+
+class MobileNetV3Small(nn.Module):
+    """timm builds the 1-channel stem by SUMMING the pretrained RGB filters (adapt_input_conv),
+    which is what the spec asks for; with pretrained=False the stem is simply 1-channel."""
+
+    def __init__(self, pretrained=False, n_classes=10):
+        super().__init__()
+        self.net = timm.create_model(ARCH, pretrained=pretrained, in_chans=1, num_classes=n_classes)
+        self.provenance = weights_provenance(self.net) if pretrained else {"pretrained": False}
+
+    def forward(self, x):
+        return self.net(x)

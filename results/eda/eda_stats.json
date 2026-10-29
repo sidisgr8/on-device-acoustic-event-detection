@@ -1,0 +1,138 @@
+{
+  "channels": {
+    "1": 739,
+    "2": 7993
+  },
+  "class_counts": {
+    "air_conditioner": 1000,
+    "car_horn": 429,
+    "children_playing": 1000,
+    "dog_bark": 1000,
+    "drilling": 1000,
+    "engine_idling": 1000,
+    "gun_shot": 374,
+    "jackhammer": 1000,
+    "siren": 929,
+    "street_music": 1000
+  },
+  "clips_per_fold": {
+    "1": 873,
+    "2": 888,
+    "3": 925,
+    "4": 990,
+    "5": 936,
+    "6": 823,
+    "7": 838,
+    "8": 806,
+    "9": 816,
+    "10": 837
+  },
+  "duration": {
+    "max": 4.0366,
+    "mean": 3.6075,
+    "median": 4.0,
+    "min": 0.05,
+    "n_full_4s": 7333,
+    "n_longer_than_4s": 8,
+    "n_shorter_than_1s": 457,
+    "n_shorter_than_2s": 982,
+    "n_shorter_than_4s": 1399
+  },
+  "interim_claim_check": {
+    "air_conditioner": {
+      "actual": 1000,
+      "interim_claim": 1000,
+      "matches": true
+    },
+    "car_horn": {
+      "actual": 429,
+      "interim_claim": 429,
+      "matches": true
+    },
+    "children_playing": {
+      "actual": 1000,
+      "interim_claim": 1000,
+      "matches": true
+    },
+    "dog_bark": {
+      "actual": 1000,
+      "interim_claim": 1000,
+      "matches": true
+    },
+    "drilling": {
+      "actual": 1000,
+      "interim_claim": 1000,
+      "matches": true
+    },
+    "engine_idling": {
+      "actual": 1000,
+      "interim_claim": 1000,
+      "matches": true
+    },
+    "gun_shot": {
+      "actual": 374,
+      "interim_claim": 374,
+      "matches": true
+    },
+    "jackhammer": {
+      "actual": 1000,
+      "interim_claim": 1000,
+      "matches": true
+    },
+    "siren": {
+      "actual": 929,
+      "interim_claim": 929,
+      "matches": true
+    },
+    "street_music": {
+      "actual": 1000,
+      "interim_claim": 1000,
+      "matches": true
+    }
+  },
+  "n_all_zero_clips": 0,
+  "n_classes": 10,
+  "n_clips_metadata": 8732,
+  "n_folds": 10,
+  "n_metadata_files_missing": 0,
+  "n_peak_below_0.001": 1,
+  "n_source_recordings": 1297,
+  "n_wav_on_disk": 8732,
+  "salience_counts": {
+    "1": 5702,
+    "2": 3030
+  },
+  "sample_rates": {
+    "8000": 12,
+    "11024": 7,
+    "11025": 39,
+    "16000": 45,
+    "22050": 44,
+    "24000": 82,
+    "32000": 4,
+    "44100": 5370,
+    "48000": 2502,
+    "96000": 610,
+    "192000": 17
+  },
+  "short_clips_by_class": {
+    "air_conditioner": 3,
+    "car_horn": 226,
+    "children_playing": 24,
+    "dog_bark": 325,
+    "drilling": 195,
+    "engine_idling": 39,
+    "gun_shot": 358,
+    "jackhammer": 197,
+    "siren": 32
+  },
+  "sources_spanning_multiple_folds": 5,
+  "subtypes": {
+    "FLOAT": 169,
+    "IMA_ADPCM": 1,
+    "MS_ADPCM": 8,
+    "PCM_16": 5758,
+    "PCM_24": 2753,
+    "PCM_U8": 43
+  }
+}
