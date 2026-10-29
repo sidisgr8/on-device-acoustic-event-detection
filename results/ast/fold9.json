@@ -1,0 +1,301 @@
+{
+  "experiment": "ast",
+  "fold": 9,
+  "protocol_version": 2,
+  "early_stopping": false,
+  "classes": [
+    "air_conditioner",
+    "car_horn",
+    "children_playing",
+    "dog_bark",
+    "drilling",
+    "engine_idling",
+    "gun_shot",
+    "jackhammer",
+    "siren",
+    "street_music"
+  ],
+  "accuracy": 0.8823529411764706,
+  "macro_f1": 0.8967110299863469,
+  "per_class_f1": {
+    "air_conditioner": 0.7294117647058823,
+    "car_horn": 1.0,
+    "children_playing": 0.9484536082474226,
+    "dog_bark": 0.9430051813471503,
+    "drilling": 0.8117647058823529,
+    "engine_idling": 0.8888888888888888,
+    "gun_shot": 1.0,
+    "jackhammer": 0.8021390374331551,
+    "siren": 0.9761904761904762,
+    "street_music": 0.8672566371681416
+  },
+  "confusion_matrix": [
+    [
+      62,
+      0,
+      1,
+      0,
+      0,
+      11,
+      0,
+      0,
+      0,
+      26
+    ],
+    [
+      0,
+      32,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      92,
+      2,
+      0,
+      4,
+      0,
+      0,
+      0,
+      2
+    ],
+    [
+      7,
+      0,
+      1,
+      91,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      69,
+      0,
+      0,
+      30,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      88,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      31,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      6,
+      0,
+      75,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      82,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      98
+    ]
+  ],
+  "loss": 0.47186626873764337,
+  "by_padding": {
+    "padded": {
+      "n": 126,
+      "accuracy": 0.9841269841269841
+    },
+    "full": {
+      "n": 690,
+      "accuracy": 0.863768115942029
+    }
+  },
+  "n_test": 816,
+  "n_params": 85625098,
+  "best_epoch": 4,
+  "best_val_acc": 0.8984468339307049,
+  "epochs_run": 5,
+  "stopped_early": false,
+  "train_time_s": 2456.6,
+  "mean_epoch_s": 491.32,
+  "norm": {
+    "mean": -4.2677393,
+    "std": 9.1379948,
+    "floor_db": null
+  },
+  "device": "mps",
+  "amp": "bf16",
+  "torch": "2.14.1",
+  "git": {
+    "commit": "d70eda8a3df43e0e76e9a4f3b17c99057791ead0",
+    "dirty": false
+  },
+  "config_hash": "68a513898a40c332",
+  "model_provenance": {
+    "pretrained": true,
+    "checkpoint": "MIT/ast-finetuned-audioset-10-10-0.4593",
+    "src_shape": [
+      1,
+      1214,
+      768
+    ],
+    "src_grid_FxT": [
+      12,
+      101
+    ],
+    "dst_grid_FxT": [
+      12,
+      39
+    ],
+    "pos_crop": "center",
+    "time_slice": [
+      31,
+      70
+    ],
+    "dst_shape": [
+      1,
+      470,
+      768
+    ],
+    "head": "classifier.dense re-initialised (10-way)"
+  },
+  "config": {
+    "protocol_version": 2,
+    "experiment": "ast",
+    "model": {
+      "name": "ast",
+      "pretrained": true,
+      "pos_crop": "center"
+    },
+    "data": {
+      "input": "ast",
+      "cache": "data/cache"
+    },
+    "train": {
+      "lr": 5e-05,
+      "weight_decay": 0.01,
+      "batch_size": 16,
+      "max_epochs": 5,
+      "warmup_epochs": 0,
+      "early_stopping": false,
+      "label_smoothing": 0.1,
+      "amp": "bf16",
+      "seed": 42
+    },
+    "specaugment": {
+      "freq_masks": 2,
+      "freq_width": 16,
+      "time_masks": 2,
+      "time_width": 40
+    }
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.76535672542736,
+      "train_acc": 0.8952205882352942,
+      "val_loss": 0.4391990420603268,
+      "val_acc": 0.8817204301075269,
+      "val_macro_f1": 0.8960230821591267,
+      "lr": 4.522542485937369e-05,
+      "train_epoch_s": 483.19,
+      "epoch_total_s": 491.53
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.6000461517685679,
+      "train_acc": 0.9628110859728507,
+      "val_loss": 0.44159415487106557,
+      "val_acc": 0.8805256869772998,
+      "val_macro_f1": 0.8935623518327146,
+      "lr": 3.272542485937369e-05,
+      "train_epoch_s": 481.97,
+      "epoch_total_s": 490.31
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.5442760938702665,
+      "train_acc": 0.9850113122171946,
+      "val_loss": 0.4013345343202103,
+      "val_acc": 0.8960573476702509,
+      "val_macro_f1": 0.9055542233496159,
+      "lr": 1.7274575140626318e-05,
+      "train_epoch_s": 481.43,
+      "epoch_total_s": 490.1
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.5206939720999602,
+      "train_acc": 0.9927884615384616,
+      "val_loss": 0.3933520385797448,
+      "val_acc": 0.8984468339307049,
+      "val_macro_f1": 0.9061855834508791,
+      "lr": 4.7745751406263165e-06,
+      "train_epoch_s": 482.59,
+      "epoch_total_s": 491.12
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.5123152208274306,
+      "train_acc": 0.9967477375565611,
+      "val_loss": 0.38715759339868094,
+      "val_acc": 0.8972520908004779,
+      "val_macro_f1": 0.9056654304993031,
+      "lr": 0.0,
+      "train_epoch_s": 484.99,
+      "epoch_total_s": 493.54
+    }
+  ]
+}

@@ -1,0 +1,391 @@
+{
+ "split": "validation only (D-20)",
+ "configs": [
+  [
+   0.0001,
+   3
+  ],
+  [
+   0.0003,
+   3
+  ],
+  [
+   0.0003,
+   10
+  ]
+ ],
+ "runs": [
+  {
+   "experiment": "mobilenetv3_small_imagenet",
+   "fold": 1,
+   "sparsity": 0.5,
+   "lr": 2.9999999999999997e-05,
+   "epochs": 3,
+   "main_run_reference": true,
+   "val_acc_before_finetune": 0.09572072072072071,
+   "val_acc_best": 0.545045045045045
+  },
+  {
+   "experiment": "mobilenetv3_small_imagenet",
+   "fold": 1,
+   "sparsity": 0.5,
+   "lr": 0.0001,
+   "epochs": 3,
+   "val_acc_before_finetune": 0.09572072072072071,
+   "val_acc_by_epoch": [
+    0.5686936936936937,
+    0.6171171171171171,
+    0.6024774774774775
+   ],
+   "val_acc_best": 0.6171171171171171,
+   "seconds": 80.5
+  },
+  {
+   "experiment": "mobilenetv3_small_imagenet",
+   "fold": 1,
+   "sparsity": 0.5,
+   "lr": 0.0003,
+   "epochs": 3,
+   "val_acc_before_finetune": 0.09572072072072071,
+   "val_acc_by_epoch": [
+    0.5968468468468469,
+    0.6869369369369369,
+    0.7027027027027027
+   ],
+   "val_acc_best": 0.7027027027027027,
+   "seconds": 80.5
+  },
+  {
+   "experiment": "mobilenetv3_small_imagenet",
+   "fold": 1,
+   "sparsity": 0.5,
+   "lr": 0.0003,
+   "epochs": 10,
+   "val_acc_before_finetune": 0.09572072072072071,
+   "val_acc_by_epoch": [
+    0.5731981981981982,
+    0.6891891891891891,
+    0.6813063063063063,
+    0.6790540540540541,
+    0.7454954954954955,
+    0.704954954954955,
+    0.7195945945945946,
+    0.7286036036036037,
+    0.7432432432432432,
+    0.7454954954954955
+   ],
+   "val_acc_best": 0.7454954954954955,
+   "seconds": 233.3
+  },
+  {
+   "experiment": "mobilenetv3_small_imagenet",
+   "fold": 1,
+   "sparsity": 0.7,
+   "lr": 2.9999999999999997e-05,
+   "epochs": 3,
+   "main_run_reference": true,
+   "val_acc_before_finetune": 0.18806306306306306,
+   "val_acc_best": 0.42680180180180183
+  },
+  {
+   "experiment": "mobilenetv3_small_imagenet",
+   "fold": 1,
+   "sparsity": 0.7,
+   "lr": 0.0001,
+   "epochs": 3,
+   "val_acc_before_finetune": 0.18806306306306306,
+   "val_acc_by_epoch": [
+    0.40202702702702703,
+    0.44594594594594594,
+    0.49774774774774777
+   ],
+   "val_acc_best": 0.49774774774774777,
+   "seconds": 80.2
+  },
+  {
+   "experiment": "mobilenetv3_small_imagenet",
+   "fold": 1,
+   "sparsity": 0.7,
+   "lr": 0.0003,
+   "epochs": 3,
+   "val_acc_before_finetune": 0.18806306306306306,
+   "val_acc_by_epoch": [
+    0.27927927927927926,
+    0.5078828828828829,
+    0.5484234234234234
+   ],
+   "val_acc_best": 0.5484234234234234,
+   "seconds": 79.9
+  },
+  {
+   "experiment": "mobilenetv3_small_imagenet",
+   "fold": 1,
+   "sparsity": 0.7,
+   "lr": 0.0003,
+   "epochs": 10,
+   "val_acc_before_finetune": 0.18806306306306306,
+   "val_acc_by_epoch": [
+    0.1858108108108108,
+    0.32657657657657657,
+    0.5855855855855856,
+    0.5394144144144144,
+    0.49099099099099097,
+    0.625,
+    0.5664414414414415,
+    0.6306306306306306,
+    0.6317567567567568,
+    0.6430180180180181
+   ],
+   "val_acc_best": 0.6430180180180181,
+   "seconds": 266.2
+  },
+  {
+   "experiment": "mobilenetv3_small_imagenet",
+   "fold": 5,
+   "sparsity": 0.5,
+   "lr": 2.9999999999999997e-05,
+   "epochs": 3,
+   "main_run_reference": true,
+   "val_acc_before_finetune": 0.10571081409477522,
+   "val_acc_best": 0.606318347509113
+  },
+  {
+   "experiment": "mobilenetv3_small_imagenet",
+   "fold": 5,
+   "sparsity": 0.5,
+   "lr": 0.0001,
+   "epochs": 3,
+   "val_acc_before_finetune": 0.10571081409477522,
+   "val_acc_by_epoch": [
+    0.6731470230862697,
+    0.6986634264884569,
+    0.7095990279465371
+   ],
+   "val_acc_best": 0.7095990279465371,
+   "seconds": 80.2
+  },
+  {
+   "experiment": "mobilenetv3_small_imagenet",
+   "fold": 5,
+   "sparsity": 0.5,
+   "lr": 0.0003,
+   "epochs": 3,
+   "val_acc_before_finetune": 0.10571081409477522,
+   "val_acc_by_epoch": [
+    0.6682867557715675,
+    0.7083839611178615,
+    0.7181044957472661
+   ],
+   "val_acc_best": 0.7181044957472661,
+   "seconds": 80.9
+  },
+  {
+   "experiment": "mobilenetv3_small_imagenet",
+   "fold": 5,
+   "sparsity": 0.5,
+   "lr": 0.0003,
+   "epochs": 10,
+   "val_acc_before_finetune": 0.10571081409477522,
+   "val_acc_by_epoch": [
+    0.6670716889428918,
+    0.715674362089915,
+    0.7168894289185905,
+    0.7229647630619684,
+    0.7059538274605103,
+    0.7339003645200486,
+    0.7132442284325637,
+    0.7217496962332929,
+    0.724179829890644,
+    0.724179829890644
+   ],
+   "val_acc_best": 0.7339003645200486,
+   "seconds": 266.3
+  },
+  {
+   "experiment": "mobilenetv3_small_imagenet",
+   "fold": 5,
+   "sparsity": 0.7,
+   "lr": 2.9999999999999997e-05,
+   "epochs": 3,
+   "main_run_reference": true,
+   "val_acc_before_finetune": 0.006075334143377886,
+   "val_acc_best": 0.2976913730255164
+  },
+  {
+   "experiment": "mobilenetv3_small_imagenet",
+   "fold": 5,
+   "sparsity": 0.7,
+   "lr": 0.0001,
+   "epochs": 3,
+   "val_acc_before_finetune": 0.006075334143377886,
+   "val_acc_by_epoch": [
+    0.3511543134872418,
+    0.3718104495747266,
+    0.3827460510328068
+   ],
+   "val_acc_best": 0.3827460510328068,
+   "seconds": 80.0
+  },
+  {
+   "experiment": "mobilenetv3_small_imagenet",
+   "fold": 5,
+   "sparsity": 0.7,
+   "lr": 0.0003,
+   "epochs": 3,
+   "val_acc_before_finetune": 0.006075334143377886,
+   "val_acc_by_epoch": [
+    0.42770352369380316,
+    0.479951397326853,
+    0.49696233292831105
+   ],
+   "val_acc_best": 0.49696233292831105,
+   "seconds": 80.3
+  },
+  {
+   "experiment": "mobilenetv3_small_imagenet",
+   "fold": 5,
+   "sparsity": 0.7,
+   "lr": 0.0003,
+   "epochs": 10,
+   "val_acc_before_finetune": 0.006075334143377886,
+   "val_acc_by_epoch": [
+    0.39003645200486026,
+    0.4471445929526124,
+    0.2503037667071689,
+    0.3462940461725395,
+    0.503037667071689,
+    0.4459295261239368,
+    0.560145808019441,
+    0.5164034021871203,
+    0.5978128797083839,
+    0.6051032806804374
+   ],
+   "val_acc_best": 0.6051032806804374,
+   "seconds": 269.1
+  },
+  {
+   "experiment": "mobilenetv3_small_imagenet",
+   "fold": 9,
+   "sparsity": 0.5,
+   "lr": 2.9999999999999997e-05,
+   "epochs": 3,
+   "main_run_reference": true,
+   "val_acc_before_finetune": 0.03942652329749104,
+   "val_acc_best": 0.6499402628434886
+  },
+  {
+   "experiment": "mobilenetv3_small_imagenet",
+   "fold": 9,
+   "sparsity": 0.5,
+   "lr": 0.0001,
+   "epochs": 3,
+   "val_acc_before_finetune": 0.03942652329749104,
+   "val_acc_by_epoch": [
+    0.6571087216248507,
+    0.7407407407407407,
+    0.7359617682198327
+   ],
+   "val_acc_best": 0.7407407407407407,
+   "seconds": 81.3
+  },
+  {
+   "experiment": "mobilenetv3_small_imagenet",
+   "fold": 9,
+   "sparsity": 0.5,
+   "lr": 0.0003,
+   "epochs": 3,
+   "val_acc_before_finetune": 0.03942652329749104,
+   "val_acc_by_epoch": [
+    0.7502986857825568,
+    0.7885304659498208,
+    0.7956989247311828
+   ],
+   "val_acc_best": 0.7956989247311828,
+   "seconds": 82.0
+  },
+  {
+   "experiment": "mobilenetv3_small_imagenet",
+   "fold": 9,
+   "sparsity": 0.5,
+   "lr": 0.0003,
+   "epochs": 10,
+   "val_acc_before_finetune": 0.03942652329749104,
+   "val_acc_by_epoch": [
+    0.6845878136200717,
+    0.7610513739545998,
+    0.7945041816009558,
+    0.7359617682198327,
+    0.7992831541218638,
+    0.8172043010752689,
+    0.8016726403823178,
+    0.8183990442054958,
+    0.8100358422939068,
+    0.8076463560334528
+   ],
+   "val_acc_best": 0.8183990442054958,
+   "seconds": 271.7
+  },
+  {
+   "experiment": "mobilenetv3_small_imagenet",
+   "fold": 9,
+   "sparsity": 0.7,
+   "lr": 2.9999999999999997e-05,
+   "epochs": 3,
+   "main_run_reference": true,
+   "val_acc_before_finetune": 0.12305854241338113,
+   "val_acc_best": 0.4074074074074074
+  },
+  {
+   "experiment": "mobilenetv3_small_imagenet",
+   "fold": 9,
+   "sparsity": 0.7,
+   "lr": 0.0001,
+   "epochs": 3,
+   "val_acc_before_finetune": 0.12305854241338113,
+   "val_acc_by_epoch": [
+    0.44205495818399043,
+    0.5101553166069295,
+    0.5316606929510155
+   ],
+   "val_acc_best": 0.5316606929510155,
+   "seconds": 80.8
+  },
+  {
+   "experiment": "mobilenetv3_small_imagenet",
+   "fold": 9,
+   "sparsity": 0.7,
+   "lr": 0.0003,
+   "epochs": 3,
+   "val_acc_before_finetune": 0.12305854241338113,
+   "val_acc_by_epoch": [
+    0.46833930704898447,
+    0.5758661887694145,
+    0.6105137395459976
+   ],
+   "val_acc_best": 0.6105137395459976,
+   "seconds": 81.5
+  },
+  {
+   "experiment": "mobilenetv3_small_imagenet",
+   "fold": 9,
+   "sparsity": 0.7,
+   "lr": 0.0003,
+   "epochs": 10,
+   "val_acc_before_finetune": 0.12305854241338113,
+   "val_acc_by_epoch": [
+    0.36798088410991636,
+    0.5579450418160096,
+    0.5125448028673835,
+    0.5436081242532855,
+    0.5053763440860215,
+    0.6726403823178017,
+    0.6929510155316607,
+    0.6989247311827957,
+    0.6738351254480287,
+    0.6666666666666666
+   ],
+   "val_acc_best": 0.6989247311827957,
+   "seconds": 235.5
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+  "experiment": "mobilenetv3_small_scratch",
+  "kind": "mobilenetv3_small",
+  "fold": 1,
+  "sparsity": 0.3,
+  "protocol_version": 2,
+  "dry_run": false,
+  "split_evaluated": "test",
+  "finetune": {
+    "epochs": 3,
+    "lr": 0.0001,
+    "lr_rule": "0.1 x original training lr (D-31)",
+    "batch_size": 64,
+    "steps_per_epoch": 108,
+    "amp": "none",
+    "best_epoch_by_val": 3,
+    "history": [
+      {
+        "epoch": 1,
+        "val_acc": 0.661036036036036
+      },
+      {
+        "epoch": 2,
+        "val_acc": 0.6497747747747747
+      },
+      {
+        "epoch": 3,
+        "val_acc": 0.6655405405405406
+      }
+    ],
+    "data": "training folds"
+  },
+  "val_acc_after_pruning_before_finetune": 0.6644144144144144,
+  "val_acc_best": 0.6655405405405406,
+  "total_params": 1527818,
+  "nonzero_params": 1074282,
+  "prunable_params": 1511784,
+  "nonzero_prunable": 1058249,
+  "actual_sparsity_of_prunable": 0.29999986770596854,
+  "overall_nonzero_fraction": 0.7031478880337841,
+  "nonzero_params_before": 1527817,
+  "size_dense_fp32_bytes": 6231959,
+  "size_gzip_bytes": 4445373,
+  "size_gzip_bytes_unpruned_baseline": 5733000,
+  "size_dense_fp32_bytes_unpruned_baseline": 6231959,
+  "source_best_pt_sha256": "0086d72afe71e97ed4a1a0f19fad46e78c0ee2495e6b49408c78b471928c57c9",
+  "latency_note": "Unstructured sparsity does not reduce CPU latency by itself: the pruned tensors stay dense (zeros are still multiplied). Only the gzip-compressed size and the non-zero parameter count shrink.",
+  "torch": "2.14.1",
+  "device": "mps",
+  "git": {
+    "commit": "da49ac8ede2b4aa138816c0c253212ae373bda68",
+    "dirty": false
+  },
+  "date": "2026-10-20T14:13:10",
+  "train_time_s": 35.2,
+  "accuracy": 0.5967926689576174,
+  "macro_f1": 0.6161820154931162,
+  "n_test": 873,
+  "by_padding": {
+    "padded": {
+      "n": 130,
+      "accuracy": 0.8769230769230769
+    },
+    "full": {
+      "n": 743,
+      "accuracy": 0.5477792732166891
+    }
+  }
+}

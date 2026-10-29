@@ -1,0 +1,98 @@
+{
+  "experiment": "crnn",
+  "kind": "crnn",
+  "fold": 5,
+  "sparsity": 0.5,
+  "protocol_version": 2,
+  "recipe": "extended",
+  "dry_run": false,
+  "split_evaluated": "test",
+  "finetune": {
+    "epochs": 10,
+    "lr": 0.0003,
+    "lr_rule": "absolute lr, extended fine-tune recipe (D-45, D-47)",
+    "batch_size": 64,
+    "steps_per_epoch": 108,
+    "amp": "none",
+    "best_epoch_by_val": 2,
+    "history": [
+      {
+        "epoch": 1,
+        "val_acc": 0.7509113001215066
+      },
+      {
+        "epoch": 2,
+        "val_acc": 0.7752126366950183
+      },
+      {
+        "epoch": 3,
+        "val_acc": 0.7545565006075334
+      },
+      {
+        "epoch": 4,
+        "val_acc": 0.7618469015795869
+      },
+      {
+        "epoch": 5,
+        "val_acc": 0.74726609963548
+      },
+      {
+        "epoch": 6,
+        "val_acc": 0.7496962332928311
+      },
+      {
+        "epoch": 7,
+        "val_acc": 0.755771567436209
+      },
+      {
+        "epoch": 8,
+        "val_acc": 0.7545565006075334
+      },
+      {
+        "epoch": 9,
+        "val_acc": 0.7582017010935601
+      },
+      {
+        "epoch": 10,
+        "val_acc": 0.7606318347509113
+      }
+    ],
+    "data": "training folds"
+  },
+  "val_acc_after_pruning_before_finetune": 0.7776427703523694,
+  "val_acc_best": 0.7752126366950183,
+  "total_params": 558442,
+  "nonzero_params": 280282,
+  "prunable_params": 556320,
+  "nonzero_prunable": 278160,
+  "actual_sparsity_of_prunable": 0.5,
+  "overall_nonzero_fraction": 0.5018999287302889,
+  "nonzero_params_before": 558442,
+  "size_dense_fp32_bytes": 2244361,
+  "size_gzip_bytes": 1220854,
+  "size_gzip_bytes_unpruned_baseline": 2076553,
+  "size_dense_fp32_bytes_unpruned_baseline": 2244361,
+  "source_best_pt_sha256": "9ea43a2bdd78be0e7c53c519e9309bdb4c359e2fb40f9ca0d0a4a010fa4d8da8",
+  "latency_note": "Unstructured sparsity does not reduce CPU latency by itself: the pruned tensors stay dense (zeros are still multiplied). Only the gzip-compressed size and the non-zero parameter count shrink.",
+  "torch": "2.14.1",
+  "device": "mps",
+  "git": {
+    "commit": "1b3e1eb8f9e622ed1dcd839236820df482046821",
+    "dirty": false
+  },
+  "date": "2026-10-20T22:25:04",
+  "train_time_s": 141.5,
+  "accuracy": 0.8450854700854701,
+  "macro_f1": 0.8425866137393954,
+  "n_test": 936,
+  "by_padding": {
+    "padded": {
+      "n": 167,
+      "accuracy": 0.8802395209580839
+    },
+    "full": {
+      "n": 769,
+      "accuracy": 0.8374512353706112
+    }
+  }
+}

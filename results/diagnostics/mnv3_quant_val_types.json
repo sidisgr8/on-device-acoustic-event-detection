@@ -1,0 +1,213 @@
+{
+ "split": "validation only (D-20)",
+ "models": {
+  "mobilenetv3_small_imagenet": {
+   "fold1": {
+    "fp32": {
+     "val_acc": 0.7533783783783784,
+     "val_macro_f1": 0.7626797118622076
+    },
+    "sanity: everything float": {
+     "val_acc": 0.7533783783783784,
+     "val_macro_f1": 0.7626797118622076
+    },
+    "SE modules float": {
+     "val_acc": 0.06981981981981981,
+     "val_macro_f1": 0.06691768222377244
+    },
+    "SE + stem + head float": {
+     "val_acc": 0.07657657657657657,
+     "val_macro_f1": 0.06740121521414101
+    },
+    "depthwise convs float (conv_dw)": {
+     "val_acc": 0.26013513513513514,
+     "val_macro_f1": 0.21846363151898465
+    },
+    "pointwise expand float (conv_pw)": {
+     "val_acc": 0.10923423423423423,
+     "val_macro_f1": 0.078131616316166
+    },
+    "pointwise project float (conv_pwl)": {
+     "val_acc": 0.07207207207207207,
+     "val_macro_f1": 0.061183147490326203
+    },
+    "blocks.0 + SE float": {
+     "val_acc": 0.1373873873873874,
+     "val_macro_f1": 0.09082355777335974
+    }
+   },
+   "fold5": {
+    "fp32": {
+     "val_acc": 0.7885783718104495,
+     "val_macro_f1": 0.7917609262413158
+    },
+    "sanity: everything float": {
+     "val_acc": 0.7885783718104495,
+     "val_macro_f1": 0.7917609262413158
+    },
+    "SE modules float": {
+     "val_acc": 0.1798298906439854,
+     "val_macro_f1": 0.1291426909586359
+    },
+    "SE + stem + head float": {
+     "val_acc": 0.17861482381530985,
+     "val_macro_f1": 0.13643658945275078
+    },
+    "depthwise convs float (conv_dw)": {
+     "val_acc": 0.3159173754556501,
+     "val_macro_f1": 0.27921337932216417
+    },
+    "pointwise expand float (conv_pw)": {
+     "val_acc": 0.14945321992709598,
+     "val_macro_f1": 0.10534578718521588
+    },
+    "pointwise project float (conv_pwl)": {
+     "val_acc": 0.16889428918590524,
+     "val_macro_f1": 0.11757666672371743
+    },
+    "blocks.0 + SE float": {
+     "val_acc": 0.22478736330498178,
+     "val_macro_f1": 0.19655110245299479
+    }
+   },
+   "fold9": {
+    "fp32": {
+     "val_acc": 0.8637992831541219,
+     "val_macro_f1": 0.8770671457368527
+    },
+    "sanity: everything float": {
+     "val_acc": 0.8637992831541219,
+     "val_macro_f1": 0.8770671457368527
+    },
+    "SE modules float": {
+     "val_acc": 0.1135005973715651,
+     "val_macro_f1": 0.07659915536342074
+    },
+    "SE + stem + head float": {
+     "val_acc": 0.1111111111111111,
+     "val_macro_f1": 0.06789683270319918
+    },
+    "depthwise convs float (conv_dw)": {
+     "val_acc": 0.35842293906810035,
+     "val_macro_f1": 0.3209634207344333
+    },
+    "pointwise expand float (conv_pw)": {
+     "val_acc": 0.13381123058542413,
+     "val_macro_f1": 0.0694697915124825
+    },
+    "pointwise project float (conv_pwl)": {
+     "val_acc": 0.11827956989247312,
+     "val_macro_f1": 0.07479057304205008
+    },
+    "blocks.0 + SE float": {
+     "val_acc": 0.27956989247311825,
+     "val_macro_f1": 0.2776096666094502
+    }
+   }
+  },
+  "mobilenetv3_small_scratch": {
+   "fold1": {
+    "fp32": {
+     "val_acc": 0.6768018018018018,
+     "val_macro_f1": 0.6959610887061527
+    },
+    "sanity: everything float": {
+     "val_acc": 0.6768018018018018,
+     "val_macro_f1": 0.6959610887061527
+    },
+    "SE modules float": {
+     "val_acc": 0.6081081081081081,
+     "val_macro_f1": 0.6301583438108136
+    },
+    "SE + stem + head float": {
+     "val_acc": 0.6126126126126126,
+     "val_macro_f1": 0.6332101877002475
+    },
+    "depthwise convs float (conv_dw)": {
+     "val_acc": 0.6452702702702703,
+     "val_macro_f1": 0.6649032823206282
+    },
+    "pointwise expand float (conv_pw)": {
+     "val_acc": 0.6137387387387387,
+     "val_macro_f1": 0.6380020220552803
+    },
+    "pointwise project float (conv_pwl)": {
+     "val_acc": 0.6024774774774775,
+     "val_macro_f1": 0.6228010269247383
+    },
+    "blocks.0 + SE float": {
+     "val_acc": 0.6148648648648649,
+     "val_macro_f1": 0.6270739013557651
+    }
+   },
+   "fold5": {
+    "fp32": {
+     "val_acc": 0.6452004860267315,
+     "val_macro_f1": 0.6466745866663779
+    },
+    "sanity: everything float": {
+     "val_acc": 0.6452004860267315,
+     "val_macro_f1": 0.6466745866663779
+    },
+    "SE modules float": {
+     "val_acc": 0.6427703523693803,
+     "val_macro_f1": 0.6337308029593827
+    },
+    "SE + stem + head float": {
+     "val_acc": 0.6415552855407047,
+     "val_macro_f1": 0.6325656821937378
+    },
+    "depthwise convs float (conv_dw)": {
+     "val_acc": 0.6500607533414338,
+     "val_macro_f1": 0.6454954902257196
+    },
+    "pointwise expand float (conv_pw)": {
+     "val_acc": 0.6391251518833536,
+     "val_macro_f1": 0.6314174275559654
+    },
+    "pointwise project float (conv_pwl)": {
+     "val_acc": 0.6391251518833536,
+     "val_macro_f1": 0.6305429018936101
+    },
+    "blocks.0 + SE float": {
+     "val_acc": 0.6452004860267315,
+     "val_macro_f1": 0.6364613482520993
+    }
+   },
+   "fold9": {
+    "fp32": {
+     "val_acc": 0.6523297491039427,
+     "val_macro_f1": 0.6714890966781903
+    },
+    "sanity: everything float": {
+     "val_acc": 0.6523297491039427,
+     "val_macro_f1": 0.6714890966781903
+    },
+    "SE modules float": {
+     "val_acc": 0.6200716845878136,
+     "val_macro_f1": 0.6419500905902221
+    },
+    "SE + stem + head float": {
+     "val_acc": 0.6129032258064516,
+     "val_macro_f1": 0.6348825805705614
+    },
+    "depthwise convs float (conv_dw)": {
+     "val_acc": 0.6212664277180406,
+     "val_macro_f1": 0.6423538588768699
+    },
+    "pointwise expand float (conv_pw)": {
+     "val_acc": 0.6176821983273596,
+     "val_macro_f1": 0.6405729851120907
+    },
+    "pointwise project float (conv_pwl)": {
+     "val_acc": 0.6236559139784946,
+     "val_macro_f1": 0.6459841803122928
+    },
+    "blocks.0 + SE float": {
+     "val_acc": 0.6248506571087217,
+     "val_macro_f1": 0.6477210556708394
+    }
+   }
+  }
+ }
+}

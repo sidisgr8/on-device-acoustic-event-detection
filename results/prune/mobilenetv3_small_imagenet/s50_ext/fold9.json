@@ -1,0 +1,98 @@
+{
+  "experiment": "mobilenetv3_small_imagenet",
+  "kind": "mobilenetv3_small",
+  "fold": 9,
+  "sparsity": 0.5,
+  "protocol_version": 2,
+  "recipe": "extended",
+  "dry_run": false,
+  "split_evaluated": "test",
+  "finetune": {
+    "epochs": 10,
+    "lr": 0.0003,
+    "lr_rule": "absolute lr, extended fine-tune recipe (D-45, D-47)",
+    "batch_size": 64,
+    "steps_per_epoch": 110,
+    "amp": "none",
+    "best_epoch_by_val": 8,
+    "history": [
+      {
+        "epoch": 1,
+        "val_acc": 0.6845878136200717
+      },
+      {
+        "epoch": 2,
+        "val_acc": 0.7610513739545998
+      },
+      {
+        "epoch": 3,
+        "val_acc": 0.7945041816009558
+      },
+      {
+        "epoch": 4,
+        "val_acc": 0.7359617682198327
+      },
+      {
+        "epoch": 5,
+        "val_acc": 0.7992831541218638
+      },
+      {
+        "epoch": 6,
+        "val_acc": 0.8172043010752689
+      },
+      {
+        "epoch": 7,
+        "val_acc": 0.8016726403823178
+      },
+      {
+        "epoch": 8,
+        "val_acc": 0.8183990442054958
+      },
+      {
+        "epoch": 9,
+        "val_acc": 0.8100358422939068
+      },
+      {
+        "epoch": 10,
+        "val_acc": 0.8076463560334528
+      }
+    ],
+    "data": "training folds"
+  },
+  "val_acc_after_pruning_before_finetune": 0.03942652329749104,
+  "val_acc_best": 0.8183990442054958,
+  "total_params": 1527818,
+  "nonzero_params": 771926,
+  "prunable_params": 1511784,
+  "nonzero_prunable": 755892,
+  "actual_sparsity_of_prunable": 0.5,
+  "overall_nonzero_fraction": 0.5052473527606037,
+  "nonzero_params_before": 1527818,
+  "size_dense_fp32_bytes": 6231959,
+  "size_gzip_bytes": 3461339,
+  "size_gzip_bytes_unpruned_baseline": 5747360,
+  "size_dense_fp32_bytes_unpruned_baseline": 6231959,
+  "source_best_pt_sha256": "5f69da884fa2f8d7e2b10ec4c4e0e95e7ecd38371abf4ce28728adfa03111dd0",
+  "latency_note": "Unstructured sparsity does not reduce CPU latency by itself: the pruned tensors stay dense (zeros are still multiplied). Only the gzip-compressed size and the non-zero parameter count shrink.",
+  "torch": "2.14.1",
+  "device": "mps",
+  "git": {
+    "commit": "1b3e1eb8f9e622ed1dcd839236820df482046821",
+    "dirty": false
+  },
+  "date": "2026-10-20T21:50:13",
+  "train_time_s": 112.2,
+  "accuracy": 0.8088235294117647,
+  "macro_f1": 0.8240238642474663,
+  "n_test": 816,
+  "by_padding": {
+    "padded": {
+      "n": 126,
+      "accuracy": 0.8888888888888888
+    },
+    "full": {
+      "n": 690,
+      "accuracy": 0.7942028985507247
+    }
+  }
+}
