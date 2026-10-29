@@ -1,14 +1,36 @@
-"""Compute the log-mel cache once:  python scripts/build_cache.py"""
+"""Build the shared caches (waveforms -> log-mel -> AST fbank).
+
+    python scripts/build_cache.py [--stages waveforms logmel ast]
+"""
 import argparse
-import sys
-from pathlib import Path
+import time
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from src.data import build_cache  # noqa: E402
+from src.data import cache as C
 
-ap = argparse.ArgumentParser()
-ap.add_argument("--root", default="data/UrbanSound8K")
-ap.add_argument("--cache", default="cache")
-ap.add_argument("--jobs", type=int, default=-1, help="-1 = all CPU cores")
-a = ap.parse_args()
-build_cache(a.root, a.cache, a.jobs)
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--raw", default=str(C.DEFAULT_RAW))
+    ap.add_argument("--cache", default=str(C.DEFAULT_CACHE))
+    ap.add_argument("--stages", nargs="+", default=["waveforms", "logmel", "ast"],
+                    choices=["waveforms", "logmel", "ast"])
+    ap.add_argument("--workers", type=int, default=8)
+    a = ap.parse_args()
+
+    for stage in a.stages:
+        t = time.time()
+        print(f"[{stage}]", flush=True)
+        if stage == "waveforms":
+            C.build_waveforms(a.raw, a.cache, a.workers)
+        elif stage == "logmel":
+            C.build_logmel(a.cache, a.workers)
+        else:
+            C.build_ast(a.cache, min(a.workers, 4))
+        print(f"[{stage}] done in {time.time() - t:.0f}s", flush=True)
+    C.write_meta(a.cache)
+
+
+# Required: macOS multiprocessing re-imports this file in every worker.
+if __name__ == "__main__":
+    main()
